@@ -1,0 +1,23 @@
+{
+  "model": "effnetv2_s",
+  "timm_name": "tf_efficientnetv2_s.in21k_ft_in1k",
+  "best_val_balanced_acc": 0.641603817376602,
+  "epochs_run": 20,
+  "args": {
+    "model": "effnetv2_s",
+    "epochs": 20,
+    "batch_size": 32,
+    "accum": 1,
+    "lr": 0.0001,
+    "head_lr_mult": 10.0,
+    "weight_decay": 0.05,
+    "gamma": 2.0,
+    "patience": 6,
+    "workers": 6,
+    "seed": 42,
+    "limit": 0,
+    "no_pretrained": false
+  },
+  "train_minutes": 43.17000314791997,
+  "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU"
+}

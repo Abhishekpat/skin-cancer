@@ -1,0 +1,37 @@
+\begin{table}[t]
+\centering
+\caption{Measured results: Internal test set (ISIC 2019, lesion-disjoint). Accuracy, balanced accuracy (BA), macro-F1 and malignant sensitivity/specificity in \%.}
+\label{tab:res_internal}
+\renewcommand{\arraystretch}{1.15}
+\footnotesize
+\begin{tabular}{@{}l c c c c c c@{}}
+\toprule
+\textbf{Model} & \textbf{Acc.} & \textbf{BA} & \textbf{F1} & \textbf{AUC} & \textbf{Sens.} & \textbf{Spec.} \\
+\midrule
+EfficientNetV2-S & 75.19 & 58.88 & 59.32 & 0.943 & 94.5 & 64.8 \\
+ConvNeXt-T & 76.89 & 60.21 & 62.68 & 0.936 & 97.1 & 58.1 \\
+Swin-T & 73.08 & 57.80 & 56.47 & 0.935 & 94.1 & 61.3 \\
+\textbf{Ensemble (equal weights)} & 77.95 & 62.99 & 64.79 & 0.950 & 95.4 & 69.9 \\
+\textbf{Ensemble (learned weights)} & 76.89 & 61.65 & 62.47 & 0.950 & 94.5 & 69.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Measured results: External test set (PAD-UFES-20, smartphone images, 6 shared classes). Accuracy, balanced accuracy (BA), macro-F1 and malignant sensitivity/specificity in \%.}
+\label{tab:res_external}
+\renewcommand{\arraystretch}{1.15}
+\footnotesize
+\begin{tabular}{@{}l c c c c c c@{}}
+\toprule
+\textbf{Model} & \textbf{Acc.} & \textbf{BA} & \textbf{F1} & \textbf{AUC} & \textbf{Sens.} & \textbf{Spec.} \\
+\midrule
+EfficientNetV2-S & 33.68 & 39.74 & 28.50 & 0.752 & 81.7 & 68.5 \\
+ConvNeXt-T & 34.73 & 38.22 & 28.64 & 0.764 & 80.4 & 74.3 \\
+Swin-T & 35.34 & 41.50 & 30.03 & 0.778 & 76.9 & 75.6 \\
+\textbf{Ensemble (equal weights)} & 37.25 & 41.89 & 30.74 & 0.787 & 78.9 & 80.8 \\
+\textbf{Ensemble (learned weights)} & 35.86 & 41.72 & 29.78 & 0.781 & 80.2 & 77.2 \\
+\bottomrule
+\end{tabular}
+\end{table}

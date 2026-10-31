@@ -1,0 +1,10 @@
+﻿[10/16/2026 23:33:19] pipeline start
+[10/16/2026 23:33:19] training effnetv2_s
+[10/17/2026 00:18:01] effnetv2_s finished with exit code 0
+[10/17/2026 00:18:01] training convnext_t
+[10/17/2026 01:08:57] convnext_t finished with exit code 0
+[10/17/2026 01:08:57] training swin_t
+[10/17/2026 01:47:06] swin_t finished with exit code 0
+[10/17/2026 01:47:27] ensemble exit code 0
+[10/17/2026 01:47:35] figures exit code 0
+[10/17/2026 01:47:35] PIPELINE DONE

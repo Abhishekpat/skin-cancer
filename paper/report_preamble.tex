@@ -1,0 +1,55 @@
+% =====================================================================
+%  report_preamble.tex -- shared preamble for the stand-alone
+%  Datasets and Algorithms reports (article class, A4).
+% =====================================================================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx,xcolor}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{positioning,arrows.meta,calc}
+\usepackage{booktabs,array,multirow,tabularx,longtable}
+\usepackage{pifont}
+\providecommand{\checkmark}{\ding{51}}
+\usepackage{enumitem}
+\setlist{itemsep=1pt,topsep=3pt,parsep=0pt}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{url}
+\usepackage[colorlinks=true,linkcolor=hcBlue,citecolor=hcBlue,urlcolor=hcTeal]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\color{hcBlue}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\setlength{\parskip}{3pt}
+
+% ---- Palette (colour-blind friendly) ----------------------------------
+\definecolor{hcBlue}{HTML}{2166AC}
+\definecolor{hcTeal}{HTML}{1B9E77}
+\definecolor{hcOrange}{HTML}{D95F02}
+\definecolor{hcPurple}{HTML}{7570B3}
+\definecolor{hcRed}{HTML}{B2182B}
+\definecolor{hcGray}{HTML}{6E6E6E}
+\definecolor{boxBg}{HTML}{EEF3FA}
+
+\pgfplotsset{
+  hcaxis/.style={
+    tick align=outside, tick pos=left, grid=major,
+    major grid style={line width=0.2pt,draw=gray!30},
+    axis line style={draw=gray!55},
+    label style={font=\footnotesize},
+    tick label style={font=\scriptsize},
+    legend style={font=\scriptsize,draw=gray!40,fill=white,rounded corners=1pt},
+    every node near coord/.append style={font=\tiny},
+  }
+}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+% Highlight box for key take-aways
+\newcommand{\keybox}[1]{%
+  \par\smallskip\noindent\colorbox{boxBg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\small #1}}\par\smallskip}

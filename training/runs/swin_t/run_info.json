@@ -1,0 +1,23 @@
+{
+  "model": "swin_t",
+  "timm_name": "swin_tiny_patch4_window7_224.ms_in22k_ft_in1k",
+  "best_val_balanced_acc": 0.6305488942480029,
+  "epochs_run": 11,
+  "args": {
+    "model": "swin_t",
+    "epochs": 20,
+    "batch_size": 32,
+    "accum": 1,
+    "lr": 0.0001,
+    "head_lr_mult": 10.0,
+    "weight_decay": 0.05,
+    "gamma": 2.0,
+    "patience": 6,
+    "workers": 6,
+    "seed": 42,
+    "limit": 0,
+    "no_pretrained": false
+  },
+  "train_minutes": 35.70257169008255,
+  "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU"
+}

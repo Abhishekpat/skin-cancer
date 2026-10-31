@@ -1,0 +1,14 @@
+train 18076  val 3659  test 3596  external 2298
+[swin_t] epoch  1/20  loss 0.3850  train_acc 0.605  val_acc 0.662  val_BA 0.526  (194s)
+[swin_t] epoch  2/20  loss 0.2541  train_acc 0.698  val_acc 0.694  val_BA 0.517  (195s)
+[swin_t] epoch  3/20  loss 0.2049  train_acc 0.736  val_acc 0.728  val_BA 0.586  (194s)
+[swin_t] epoch  4/20  loss 0.1691  train_acc 0.759  val_acc 0.728  val_BA 0.605  (194s)
+[swin_t] epoch  5/20  loss 0.1456  train_acc 0.786  val_acc 0.737  val_BA 0.631  (195s)
+[swin_t] epoch  6/20  loss 0.1247  train_acc 0.804  val_acc 0.707  val_BA 0.547  (195s)
+[swin_t] epoch  7/20  loss 0.1011  train_acc 0.826  val_acc 0.738  val_BA 0.627  (195s)
+[swin_t] epoch  8/20  loss 0.0858  train_acc 0.846  val_acc 0.746  val_BA 0.607  (195s)
+[swin_t] epoch  9/20  loss 0.0737  train_acc 0.868  val_acc 0.755  val_BA 0.587  (195s)
+[swin_t] epoch 10/20  loss 0.0586  train_acc 0.878  val_acc 0.768  val_BA 0.590  (195s)
+[swin_t] epoch 11/20  loss 0.0485  train_acc 0.894  val_acc 0.748  val_BA 0.568  (194s)
+Early stopping (no improvement for 6 epochs).
+Done. Best validation balanced accuracy: 0.6305

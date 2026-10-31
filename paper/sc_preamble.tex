@@ -1,0 +1,127 @@
+% =====================================================================
+%  sc_preamble.tex
+%  Shared preamble for the Skin Cancer Detection IEEE paper (1-col & 2-col).
+%  Input AFTER \documentclass{IEEEtran} so that \ifCLASSOPTIONonecolumn
+%  and \ifCLASSOPTIONtwocolumn are already defined by IEEEtran.
+% =====================================================================
+
+% ---- Encoding / fonts -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% ---- Math -------------------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+% ---- Graphics, colour, plots -----------------------------------------
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,fit,backgrounds,calc}
+
+% ---- Tables -----------------------------------------------------------
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+% ---- Algorithms -------------------------------------------------------
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ---- Symbols (safe check-mark regardless of amssymb) ------------------
+\usepackage{pifont}
+\providecommand{\checkmark}{\ding{51}}
+
+% ---- Misc typographic helpers ----------------------------------------
+\usepackage{cite}
+\usepackage{url}
+\usepackage{stfloats}   % better double-column bottom floats + \balance
+\usepackage{balance}
+\usepackage[hidelinks]{hyperref}
+
+% ---- Float placement: this paper is float-heavy (many tables/figures),
+%      so relax the defaults to keep floats near their references and
+%      avoid deferred/dropped floats (which cause undefined \ref).
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{6}
+\setcounter{dbltopnumber}{3}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.72}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\dblfloatpagefraction}{0.7}
+
+% ---- Consistent chart palette (colour-blind friendly) ----------------
+\definecolor{hcBlue}{HTML}{2166AC}
+\definecolor{hcTeal}{HTML}{1B9E77}
+\definecolor{hcOrange}{HTML}{D95F02}
+\definecolor{hcPurple}{HTML}{7570B3}
+\definecolor{hcRed}{HTML}{B2182B}
+\definecolor{hcGray}{HTML}{6E6E6E}
+\definecolor{hcYellow}{HTML}{E6AB02}
+\definecolor{hcGreen}{HTML}{4DAF4A}
+\definecolor{panelBg}{HTML}{F2F5FA}
+\definecolor{panelLine}{HTML}{9AA7BD}
+
+% A shared pgfplots style so every chart looks like one family.
+\pgfplotsset{
+  hcaxis/.style={
+    tick align=outside,
+    tick pos=left,
+    grid=major,
+    major grid style={line width=0.2pt,draw=gray!30},
+    axis line style={draw=gray!55},
+    label style={font=\footnotesize},
+    tick label style={font=\scriptsize},
+    title style={font=\small\bfseries},
+    legend style={font=\scriptsize,draw=gray!40,fill=white,fill opacity=0.9,
+                  text opacity=1,rounded corners=1pt},
+    every axis plot/.append style={line width=1.0pt},
+  }
+}
+
+% ---- Adaptive figure/chart widths ------------------------------------
+% Charts should be compact in single-column mode and column-filling in
+% two-column mode.  These macros are expanded at figure time when
+% \linewidth already reflects the surrounding column/float width.
+\ifCLASSOPTIONonecolumn
+  \newcommand{\chartw}{0.62\linewidth}   % single (in-flow) chart
+  \newcommand{\charth}{0.40\linewidth}
+  \newcommand{\widechartw}{0.80\linewidth}
+  \newcommand{\widecharth}{0.34\linewidth}
+  \newcommand{\tallcharth}{0.52\linewidth}  % charts with many bars
+  \newcommand{\barchartw}{0.52\linewidth}   % horizontal bar charts
+\else
+  \newcommand{\chartw}{0.98\linewidth}
+  \newcommand{\charth}{0.66\linewidth}
+  \newcommand{\widechartw}{0.44\linewidth}
+  \newcommand{\widecharth}{0.30\linewidth}
+  \newcommand{\tallcharth}{0.90\linewidth}
+  \newcommand{\barchartw}{0.80\linewidth}
+\fi
+
+% ---- Wide-float helpers ----------------------------------------------
+% Wide floats use an INLINE guard at the point of use in the body:
+%   \ifCLASSOPTIONtwocolumn\begin{figure*}\else\begin{figure}\fi ...
+%   \ifCLASSOPTIONtwocolumn\end{figure*}\else\end{figure}\fi
+% The \ifCLASSOPTIONtwocolumn test is evaluated at run time and
+% consistently selects the SAME environment for the matching begin/end,
+% so LaTeX's environment checker never sees a mismatch.  (We deliberately
+% do NOT wrap \begin/\end inside \newcommand bodies, which is brittle.)
+
+% ---- Small semantic helpers ------------------------------------------
+\newcommand{\code}[1]{\texttt{\small #1}}
+\newcommand{\field}[1]{\texttt{\footnotesize #1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+% Tighter list spacing to keep the paper dense.
+\usepackage{enumitem}
+\setlist{itemsep=1pt,topsep=2pt,parsep=0pt}
